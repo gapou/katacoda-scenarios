@@ -2,7 +2,13 @@ Ensuring that users have successfully completed certain actions before the proce
 
 When the user clicks Continue, a script is run against the environment.
 
-For the user to be allowed to proceed, the script should output the text "done". For example, the following verify script checks to make sure the user has run `git init`{{execute}} before they can proceed.
+For the user to be allowed to proceed, the script should output the text "done". For example, the following verify script checks to make sure the user has run
+
+ `docker run -d --name mysql -e MYSQL_ROOT_PASSWORD=root mysql:latest`{{execute}} before they can proceed.
+
+ `docker exec -it mysql bash`{{execute}} before they can proceed.
+
+ `mysql -u root -p`{{execute}} before they can proceed.
 
 <pre>
 [ -d /home/scrapbook/tutorial/.git ] && echo "done"
